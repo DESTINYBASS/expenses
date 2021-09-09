@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expenses</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js" integrity="sha512-YSdqvJoZr83hj76AIVdOcvLWYMWzy6sJyIMic2aQz5kh2bPTd9dzY3NtdeEAzPp/PhgZqr4aJObB3ym/vsItMg==" crossorigin="anonymous"></script>
+        <!-- <link rel="icon" href="icon.ico"> -->
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body onload="checkList()">
+        <div>
+            <a href="/pages/new" id="addButton"><i class="fas fa-plus-circle"></i> Add new Transaction</a> 
+            <h2>Total expenses this month:</h2>
+            <ul id="myUL">
+                <% articles.forEach(article => { %>
+                    <li class="li">
+                        <div class="card">
+                            <form action="/pages/<%= article.id %>?_method=DELETE" method="POST" id="delete">
+                                <button type="submit" class="btn btn-danger" id="delButton"><i class="fas fa-trash-alt"></i></button>
+                            </form>
+                            <h4 class="card-title d-inline" id="title">-<%= article.amount %>€, <%= article.place %></h4>
+                            <h6><%= article.date.toLocaleDateString() %>, <%= article.category %> </h6>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+            <style>
+                ul{
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                }
+                a{
+                    color: black;
+                }
+                a:hover{
+                    color: black;
+                    text-decoration: none;
+                }
+                select{
+                    border: 0.5px solid grey;
+                    border-radius: 10px;
+                    font-size: 18px;
+                    padding: 5px 5px 5px 5px;
+                }
+                label{
+                    margin: 0;
+                    padding: 0;
+                }
+                select:hover{
+                    cursor: pointer;
+                }
+                #delete{
+                    position: absolute;
+                    right: 15px;
+                    margin-top: 5px;
+                }
+            </style>
+            <script>
+                function checkList(){
+                    const ul = document.getElementById("myUL");
+                    if(ul.childElementCount == 0){
+                        var div = document.createElement("div");
+                        div.classList.add("emptyDiv");
+                        var h3 = document.createElement("h3");
+                        h3.innerText = "No expenses added yet.";
+                        h3.style.textAlign = "center"
+                        h3.style.marginTop = "30px"
+                        div.appendChild(h3);
+                        ul.appendChild(div);
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>

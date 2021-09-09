@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body{
+    background-color: #333;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+body a{
+    color: white;
+}
+
+.card{
+    position: absolute; 
+    left: 25%;
+    width: 30%;
+    border: 3px solid white;
+    border-radius: 15px;
+    padding-left: 15px; 
+}
+
+.li{
+    margin-bottom: 125px;
+}
+
+#delButton{
+    position: relative;
+    color: white;
+    font-size: 25px;
+    border-radius: 15px;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(255, 61, 61);
+    transition: 0.2s;
+}
+
+#delButton:hover{
+    cursor: pointer;
+    background-color: rgb(255, 30, 30);
+}
+
+.form-control{
+    margin-bottom: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 5px 5px 5px;
+}
+
+#saveButton{
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+    color: white;
+    background-color: rgb(0, 206, 0);
+}
+
+#cancelButton{
+    color: white;
+    background-color: rgb(255, 30, 30);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+}
+
+#addButton{
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 5px 5px 5px;
+    color: white;
+    background-color: rgb(0, 206, 0);
+    text-decoration: none;
+    margin-top: 10%;
+}
+
+.btn:hover{
+    cursor: pointer;
+}

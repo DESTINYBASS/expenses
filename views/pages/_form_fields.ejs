@@ -1,0 +1,18 @@
+<div class="form-group">
+    <label for="place">Place</label>
+    <input required value="<%= article.place %>" type="text" name="place" id="place" class="form-control">
+</div>
+<div class="form-group">
+    <label for="amount">Amount</label>
+    <input required value="<%= article.amount %>" type="number" name="amount" id="amount" class="form-control">
+</div>
+<div class="form-group">
+    <label for="category">Category</label>
+    <select name="category" id="category" class="form-control">
+        <option value="Food/Drinks">food/drinks</option>
+        <option value="Leisure Activities">leisure activities</option>
+    </select>
+</div>
+<br> <a href="/" class="btn btn-secondary" id="cancelButton">Cancel</a>
+<button type="submit" class="btn btn-primary" id="saveButton">Save</button>
+<div style="margin-bottom: 10%"></div>
